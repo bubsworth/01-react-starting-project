@@ -7,14 +7,18 @@ import TabButton from './components/TabButton.jsx';
 import CoreConcept from './components/CoreConcept.jsx';
 
 function App() {
+  //setting up state for the topic tabs
   const [ selectedTopic, setSelectedTopic ] = useState();
 
+  //handles the change that happens when a topic is selected
   function handleSelect(selectedButton) {
     setSelectedTopic(selectedButton);
   }
 
+  // sets the default content for the tabs
   let tabContent = <p>Please select a topic.</p>;
-  
+
+  // if one of the tabs is clicked, then it'll show this code
   if (selectedTopic) {
     tabContent = (
       <div id="tab-content">
